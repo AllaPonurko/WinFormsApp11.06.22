@@ -104,7 +104,7 @@ namespace WinFormsApp11._06._22
             // 
             // btnShow
             // 
-            this.btnShow.Location = new System.Drawing.Point(34, 332);
+            this.btnShow.Location = new System.Drawing.Point(628, 361);
             this.btnShow.Name = "btnShow";
             this.btnShow.Size = new System.Drawing.Size(120, 23);
             this.btnShow.TabIndex = 7;

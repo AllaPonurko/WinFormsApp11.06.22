@@ -61,7 +61,7 @@ namespace WinFormsApp11._06._22
             // 
             // btnEditProd
             // 
-            this.btnEditProd.Location = new System.Drawing.Point(39, 353);
+            this.btnEditProd.Location = new System.Drawing.Point(229, 112);
             this.btnEditProd.Name = "btnEditProd";
             this.btnEditProd.Size = new System.Drawing.Size(120, 23);
             this.btnEditProd.TabIndex = 2;

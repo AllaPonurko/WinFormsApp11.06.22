@@ -52,6 +52,7 @@ namespace WinFormsApp11._06._22
             
         }
         double sum = 0.00;
+       
         private void btnAdd_Click(object sender, EventArgs e)
         {
             listBoxSale.Items.Add(listBoxListProduct.SelectedItem.ToString());
