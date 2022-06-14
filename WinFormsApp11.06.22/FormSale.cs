@@ -13,7 +13,9 @@ using WinFormsApp11._06._22.Entities;
 namespace WinFormsApp11._06._22
 {
     public partial class FormSale : Form
-    {
+    {/// <summary>
+    /// ИНИЦИАЛИЗАЦИЯ ФОРМЫ
+    /// </summary>
         public FormSale()
         {
             InitializeComponent();
@@ -27,10 +29,20 @@ namespace WinFormsApp11._06._22
             listBoxListProduct.Items.Add(new Product() { Name = "Клавиатура", Price = 600.00 }.ToStringName());
             //    listBoxListProduct.SelectedIndexChanged += listBoxListProduct_SelectedIndexChanged;
         }
-
+        /// <summary>
+        /// создаём контекст содержащий данные о комплектующих
+        /// </summary>
+        DbContext context = new DbContext();
         private void listBoxListProduct_SelectedIndexChanged(object sender, EventArgs e)
         {
-            textBoxPrice.Text = listBoxListProduct.SelectedItem.ToString();
+            
+            foreach(var item in context.Products)
+            {
+                if (listBoxListProduct.SelectedItem.ToString() == item.Name)
+                    textBoxPrice.Text = item.Price.ToString();
+                textBoxTotalCost.Text= item.Price.ToString();
+            }
+            
         }
 
         private void btnShow_Click(object sender, EventArgs e)
@@ -39,11 +51,18 @@ namespace WinFormsApp11._06._22
             formProduct.Show();
             
         }
-
+        double sum = 0.00;
         private void btnAdd_Click(object sender, EventArgs e)
         {
             listBoxSale.Items.Add(listBoxListProduct.SelectedItem.ToString());
-            textBoxTotalCost.Text = Convert.ToString(listBoxListProduct.SelectedItem.ToString());
+            
+            foreach (var item in context.Products)
+            {
+                if (listBoxListProduct.SelectedItem.ToString() == item.Name)
+                    sum += item.Price;
+                textBoxTotalCost.Text = sum.ToString();
+            }
+
         }
     }
 }
