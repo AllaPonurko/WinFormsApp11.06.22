@@ -22,10 +22,7 @@ namespace WinFormsApp11._06._22
                 listBoxList.Items.Add(sale.listBoxListProduct.Items[i].ToString()) ;
         }
 
-        private void btnEditProd_Click(object sender, EventArgs e)
-        {
-
-        }
+        
         DbContext context = new DbContext();
         private void listBoxList_SelectedIndexChanged(object sender, EventArgs e)
         {foreach(var item in context.Products)
@@ -36,6 +33,27 @@ namespace WinFormsApp11._06._22
                     txtDescription.Text = item.Description;
                 }
             
+        }
+
+        private void txtName_TextChanged(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void btnSave_Click(object sender, EventArgs e)
+        {
+            foreach (var item in context.Products)
+                if (listBoxList.SelectedItem.ToString() == item.Name)
+                {
+                    item.Name = txtName.Text;
+                    item.Price = Convert.ToDouble(txtPrice.Text);
+                    item.Description = txtDescription.Text;
+                }
+        }
+
+        private void btnExit_Click(object sender, EventArgs e)
+        {
+            Close();
         }
     }
 }

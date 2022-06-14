@@ -65,5 +65,10 @@ namespace WinFormsApp11._06._22
             }
 
         }
+
+        private void btnExit_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
     }
 }

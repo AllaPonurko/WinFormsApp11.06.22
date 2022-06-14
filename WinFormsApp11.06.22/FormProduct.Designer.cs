@@ -31,13 +31,14 @@ namespace WinFormsApp11._06._22
         {
             this.listBoxList = new System.Windows.Forms.ListBox();
             this.labelListProd = new System.Windows.Forms.Label();
-            this.btnEditProd = new System.Windows.Forms.Button();
+            this.btnSave = new System.Windows.Forms.Button();
             this.txtName = new System.Windows.Forms.TextBox();
             this.labelName = new System.Windows.Forms.Label();
             this.txtDescription = new System.Windows.Forms.TextBox();
             this.labelDescription = new System.Windows.Forms.Label();
             this.labelPrice = new System.Windows.Forms.Label();
             this.txtPrice = new System.Windows.Forms.TextBox();
+            this.btnExit = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // listBoxList
@@ -59,15 +60,15 @@ namespace WinFormsApp11._06._22
             this.labelListProd.TabIndex = 1;
             this.labelListProd.Text = "List Ptoducts";
             // 
-            // btnEditProd
+            // btnSave
             // 
-            this.btnEditProd.Location = new System.Drawing.Point(229, 112);
-            this.btnEditProd.Name = "btnEditProd";
-            this.btnEditProd.Size = new System.Drawing.Size(120, 23);
-            this.btnEditProd.TabIndex = 2;
-            this.btnEditProd.Text = "Edit product";
-            this.btnEditProd.UseVisualStyleBackColor = true;
-            this.btnEditProd.Click += new System.EventHandler(this.btnEditProd_Click);
+            this.btnSave.Location = new System.Drawing.Point(229, 112);
+            this.btnSave.Name = "btnSave";
+            this.btnSave.Size = new System.Drawing.Size(120, 23);
+            this.btnSave.TabIndex = 2;
+            this.btnSave.Text = "Save";
+            this.btnSave.UseVisualStyleBackColor = true;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // txtName
             // 
@@ -75,6 +76,7 @@ namespace WinFormsApp11._06._22
             this.txtName.Name = "txtName";
             this.txtName.Size = new System.Drawing.Size(100, 23);
             this.txtName.TabIndex = 3;
+            this.txtName.TextChanged += new System.EventHandler(this.txtName_TextChanged);
             // 
             // labelName
             // 
@@ -117,18 +119,29 @@ namespace WinFormsApp11._06._22
             this.txtPrice.Size = new System.Drawing.Size(100, 23);
             this.txtPrice.TabIndex = 8;
             // 
+            // btnExit
+            // 
+            this.btnExit.Location = new System.Drawing.Point(678, 402);
+            this.btnExit.Name = "btnExit";
+            this.btnExit.Size = new System.Drawing.Size(75, 23);
+            this.btnExit.TabIndex = 9;
+            this.btnExit.Text = "Exit";
+            this.btnExit.UseVisualStyleBackColor = true;
+            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
+            // 
             // FormProduct
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btnExit);
             this.Controls.Add(this.txtPrice);
             this.Controls.Add(this.labelPrice);
             this.Controls.Add(this.labelDescription);
             this.Controls.Add(this.txtDescription);
             this.Controls.Add(this.labelName);
             this.Controls.Add(this.txtName);
-            this.Controls.Add(this.btnEditProd);
+            this.Controls.Add(this.btnSave);
             this.Controls.Add(this.labelListProd);
             this.Controls.Add(this.listBoxList);
             this.Name = "FormProduct";
@@ -142,12 +155,13 @@ namespace WinFormsApp11._06._22
 
         private System.Windows.Forms.ListBox listBoxList;
         private System.Windows.Forms.Label labelListProd;
-        private System.Windows.Forms.Button btnEditProd;
+        private System.Windows.Forms.Button btnSave;
         private System.Windows.Forms.TextBox txtName;
         private System.Windows.Forms.Label labelName;
         private System.Windows.Forms.TextBox txtDescription;
         private System.Windows.Forms.Label labelDescription;
         private System.Windows.Forms.Label labelPrice;
         private System.Windows.Forms.TextBox txtPrice;
+        private System.Windows.Forms.Button btnExit;
     }
 }

@@ -37,6 +37,7 @@ namespace WinFormsApp11._06._22
             this.textBoxTotalCost = new System.Windows.Forms.TextBox();
             this.btnAdd = new System.Windows.Forms.Button();
             this.btnShow = new System.Windows.Forms.Button();
+            this.btnExit = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // listBoxListProduct
@@ -112,11 +113,22 @@ namespace WinFormsApp11._06._22
             this.btnShow.UseVisualStyleBackColor = true;
             this.btnShow.Click += new System.EventHandler(this.btnShow_Click);
             // 
+            // btnExit
+            // 
+            this.btnExit.Location = new System.Drawing.Point(628, 413);
+            this.btnExit.Name = "btnExit";
+            this.btnExit.Size = new System.Drawing.Size(120, 23);
+            this.btnExit.TabIndex = 8;
+            this.btnExit.Text = "Exit";
+            this.btnExit.UseVisualStyleBackColor = true;
+            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
+            // 
             // FormSale
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btnExit);
             this.Controls.Add(this.btnShow);
             this.Controls.Add(this.btnAdd);
             this.Controls.Add(this.textBoxTotalCost);
@@ -141,6 +153,7 @@ namespace WinFormsApp11._06._22
         private System.Windows.Forms.Button btnAdd;
         public System.Windows.Forms.ListBox listBoxListProduct;
         private System.Windows.Forms.Button btnShow;
+        private System.Windows.Forms.Button btnExit;
     }
 }
 
