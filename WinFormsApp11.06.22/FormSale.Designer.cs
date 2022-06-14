@@ -36,6 +36,7 @@ namespace WinFormsApp11._06._22
             this.labelCost = new System.Windows.Forms.Label();
             this.textBoxTotalCost = new System.Windows.Forms.TextBox();
             this.btnAdd = new System.Windows.Forms.Button();
+            this.btnShow = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // listBoxListProduct
@@ -50,7 +51,9 @@ namespace WinFormsApp11._06._22
             // 
             // textBoxPrice
             // 
+            this.textBoxPrice.Enabled = false;
             this.textBoxPrice.Location = new System.Drawing.Point(231, 54);
+            this.textBoxPrice.Multiline = true;
             this.textBoxPrice.Name = "textBoxPrice";
             this.textBoxPrice.Size = new System.Drawing.Size(100, 23);
             this.textBoxPrice.TabIndex = 1;
@@ -97,12 +100,24 @@ namespace WinFormsApp11._06._22
             this.btnAdd.TabIndex = 6;
             this.btnAdd.Text = "Add";
             this.btnAdd.UseVisualStyleBackColor = true;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
+            // 
+            // btnShow
+            // 
+            this.btnShow.Location = new System.Drawing.Point(34, 332);
+            this.btnShow.Name = "btnShow";
+            this.btnShow.Size = new System.Drawing.Size(120, 23);
+            this.btnShow.TabIndex = 7;
+            this.btnShow.Text = "Show Products";
+            this.btnShow.UseVisualStyleBackColor = true;
+            this.btnShow.Click += new System.EventHandler(this.btnShow_Click);
             // 
             // FormSale
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btnShow);
             this.Controls.Add(this.btnAdd);
             this.Controls.Add(this.textBoxTotalCost);
             this.Controls.Add(this.labelCost);
@@ -125,6 +140,7 @@ namespace WinFormsApp11._06._22
         private System.Windows.Forms.TextBox textBoxTotalCost;
         private System.Windows.Forms.Button btnAdd;
         public System.Windows.Forms.ListBox listBoxListProduct;
+        private System.Windows.Forms.Button btnShow;
     }
 }
 

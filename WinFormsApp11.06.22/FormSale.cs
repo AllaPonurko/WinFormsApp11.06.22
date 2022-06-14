@@ -17,13 +17,33 @@ namespace WinFormsApp11._06._22
         public FormSale()
         {
             InitializeComponent();
-            DbContext dbContext = new DbContext();
-            listBoxListProduct.Items.AddRange(dbContext.Products.ToArray());
+            listBoxListProduct.Items.Add(new Product() { Name = "Память", Price = 800.00 }.ToStringName());
+            listBoxListProduct.Items.Add(new Product() { Name = "Монитор", Price = 4200.00 }.ToStringName());
+            listBoxListProduct.Items.Add(new Product() { Name = "Жёсткий диск", Price = 3000.00 }.ToStringName());
+            listBoxListProduct.Items.Add(new Product() { Name = "Мышь", Price = 300.00 }.ToStringName());
+            listBoxListProduct.Items.Add(new Product() { Name = "Твердотельный накопитель", Price = 2500.00 }.ToStringName());
+            listBoxListProduct.Items.Add(new Product() { Name = "Процессор", Price = 4800.00 }.ToStringName());
+            listBoxListProduct.Items.Add(new Product() { Name = "Флэш-память", Price = 250.00 }.ToStringName());
+            listBoxListProduct.Items.Add(new Product() { Name = "Клавиатура", Price = 600.00 }.ToStringName());
+            //    listBoxListProduct.SelectedIndexChanged += listBoxListProduct_SelectedIndexChanged;
         }
 
         private void listBoxListProduct_SelectedIndexChanged(object sender, EventArgs e)
         {
-            //textBoxPrice.Text=
+            textBoxPrice.Text = listBoxListProduct.SelectedItem.ToString();
+        }
+
+        private void btnShow_Click(object sender, EventArgs e)
+        {
+            FormProduct formProduct = new FormProduct(this);
+            formProduct.Show();
+            
+        }
+
+        private void btnAdd_Click(object sender, EventArgs e)
+        {
+            listBoxSale.Items.Add(listBoxListProduct.SelectedItem.ToString());
+            textBoxTotalCost.Text = Convert.ToString(listBoxListProduct.SelectedItem.ToString());
         }
     }
 }
