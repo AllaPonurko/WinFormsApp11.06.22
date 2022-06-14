@@ -17,7 +17,7 @@ namespace WinFormsApp11._06._22
         public FormProduct(FormSale sale)
         {
             InitializeComponent();
-            //listBoxList = sale.listBoxListProduct;
+            listBoxList = sale.listBoxListProduct;
         }
 
         private void btnEditProd_Click(object sender, EventArgs e)
