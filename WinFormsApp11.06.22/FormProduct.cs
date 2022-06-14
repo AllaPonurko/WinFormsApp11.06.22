@@ -27,7 +27,7 @@ namespace WinFormsApp11._06._22
 
         private void listBoxList_SelectedIndexChanged(object sender, EventArgs e)
         {
-            txtName.Text =listBoxList.Items.ToString();
+            txtName.Text = listBoxList.Items.ToString();
         }
     }
 }
